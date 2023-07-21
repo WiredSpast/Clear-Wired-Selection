@@ -22,7 +22,7 @@ jobs:
         run: cargo build --verbose
         
       - name: List files
-        run: ls
+        run: ls . target
 
       - name: Upload
         uses: actions/upload-artifact@v2
