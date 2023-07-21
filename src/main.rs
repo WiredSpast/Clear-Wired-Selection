@@ -26,7 +26,7 @@ fn main() {
     let mut ext: Extension<ClearOpenWired> = Extension::new();
     ext.info = ExtensionInfo {
         name: "Clear Wired Selection".to_string(),
-        description: "Type :cw to clear the selected furni in the currently open wired".to_string(),
+        description: "Clear selected furnis in Wired (:cw)".to_string(),
         author: "WiredSpast".to_string(),
         version: "0.1.0".to_string(),
     };
@@ -40,8 +40,9 @@ fn main() {
     ext.run();
 }
 
-fn on_chat(ext: &mut Extension<ClearOpenWired>, _msg: &mut HMessage, chat: &mut Chat) {
+fn on_chat(ext: &mut Extension<ClearOpenWired>, msg: &mut HMessage, chat: &mut Chat) {
     if chat.text == ":cw" {
+        msg.blocked = true;
         if ext.globals.last_opened_selector.is_some() {
             let mut selector = ext.globals.last_opened_selector.clone().unwrap();
             selector.def.stuff_ids = vec![];
