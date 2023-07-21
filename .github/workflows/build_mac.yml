@@ -21,12 +21,12 @@ jobs:
       - name: Build
         run: cargo build --verbose
         
-      - name: List files
-        run: ls . target
+      - name: List debug files
+        run: target/debug
 
       - name: Upload
         uses: actions/upload-artifact@v2
         with:
           name: MacOS
-          path: target/clear-wired-selection
+          path: target/debug/clear-wired-selection
           retention-days: 7
