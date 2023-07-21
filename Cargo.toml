@@ -1,0 +1,9 @@
+[package]
+name = "clear-wired-selection"
+version = "0.1.0"
+edition = "2021"
+authors = ["WiredSpast"]
+description = "Clear the selected furni in the currently open wired"
+
+[dependencies]
+g-rust = { version = "0.0.1-beta.5" }
