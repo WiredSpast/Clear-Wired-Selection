@@ -23,6 +23,9 @@ jobs:
         
       - name: List debug files
         run: ls target/debug
+        
+      - name: Make file executable
+        run: chmod +x target/debug/clear-wired-selection
 
       - name: Upload
         uses: actions/upload-artifact@v3
