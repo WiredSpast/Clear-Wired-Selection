@@ -25,7 +25,7 @@ jobs:
         run: ls target/debug
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: MacOS
           path: target/debug/clear-wired-selection
@@ -48,7 +48,7 @@ jobs:
         run: ls target/debug
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Linux
           path: target/debug/clear-wired-selection
@@ -71,7 +71,7 @@ jobs:
         run: dir target/debug
 
       - name: Upload
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: Windows
           path: target/debug/clear-wired-selection.exe
